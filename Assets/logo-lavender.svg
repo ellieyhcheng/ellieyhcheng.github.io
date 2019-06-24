@@ -14,7 +14,7 @@
    width="385"
    height="350"
    viewBox="0 0 385 350"
-   sodipodi:docname="logo.svg"
+   sodipodi:docname="logo-lavender.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
      id="metadata821">
@@ -24,6 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,8 +44,8 @@
      id="namedview817"
      showgrid="false"
      inkscape:zoom="1.2768328"
-     inkscape:cx="24.93315"
-     inkscape:cy="155.41525"
+     inkscape:cx="99.499804"
+     inkscape:cy="81.254137"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"

@@ -1,0 +1,139 @@
+:root {
+    --dark: #273246;
+    --light: #F5FFFE;
+    --primary: #EF8F97;
+    --secondary: #E7F9F7;
+    --ternary: #CCC2D7;
+    --navbar-height: 80px;
+}
+
+body {
+    background: var(--dark);
+    font-family: 'Dosis', sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+#navbar-desktop {
+    background: var(--light);
+    position: fixed;
+    width: 100%;
+    height: var(--navbar-height);
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 40%;
+    width: 40%;
+}
+
+.menu-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 0.09em var(--dark) solid;
+    border-left: 0;
+    padding: 0 5px;
+    font-size: 1em;
+    letter-spacing: 0.3em;
+}
+
+#menu div:first-child {
+    border-left: 0.09em var(--dark) solid !important;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#top-decor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+}
+
+#top-decor > .line {
+    width: 40%;
+}
+
+
+#top-decor > .logo {
+    width: 12%;
+    color: var(--secondary);
+}
+
+#bottom-decor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+}
+
+#bottom-decor > .line {
+    width: 30%;
+}
+
+#bottom-decor > .logo {
+    width: 6%;
+}
+
+.line > hr {
+    color: var(--secondary);
+}
+
+#name-title {
+    font-weight: 600;
+    font-size: 96px;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+    margin: 5vh 0;
+}
+
+#subtitle {
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 0.2em;
+    color: var(--ternary);
+    margin-bottom: 10vh;
+}
+
+/****** Tablet ******/
+
+@media only screen and (max-width: 970px) {
+    .menu-item {
+        font-size: 1.5vw;
+    }
+}
+
+/****** Mobile ******/
+
+@media only screen and (max-width: 760px) {
+    #navbar-desktop {
+        height: 10vh;
+    }
+
+    .menu-item {
+        font-size: 3vw;
+    }
+}
