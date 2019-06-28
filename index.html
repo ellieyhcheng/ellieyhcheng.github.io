@@ -11,6 +11,11 @@
 
 <body>
     <div id="navbar-desktop">
+        <div id="left-decor">
+            <span class="line">
+                <hr></span>
+            <img class="logo" src="Assets/logo-darkblue.svg" />
+        </div>
         <div id="menu">
             <div class="menu-item">
                 <p>home</p>
@@ -25,12 +30,23 @@
                 <p>résumé</p>
             </div>
         </div>
+        <div id="right-decor">
+            <div id="contact-icons">
+                <img class="logo" src="Assets/github-darkblue.svg" />
+                <img class="logo" src="Assets/linkedin-darkblue.svg" />
+                <img class="logo" src="Assets/gmail-darkblue.svg" />
+            </div>
+            <span class="line">
+                <hr></span>
+        </div>
     </div>
-    <div id="home">
+    <div id="home" class="panel" data-index="0">
         <div id="top-decor">
-            <span class="line"><hr ></span>
-            <img class="logo" src="Assets/logo-iceblue.svg"/>
-            <span class="line"><hr ></span>
+            <span class="line">
+                <hr></span>
+            <img class="logo" src="Assets/logo-iceblue.svg" />
+            <span class="line">
+                <hr></span>
         </div>
         <div id="name-title">
             <p>ELLIE CHENG</p>
@@ -39,13 +55,51 @@
             <p>software engineer building a safer world</p>
         </div>
         <div id="bottom-decor">
-            <span class="line"><hr ></span>
-            <img class="logo" src="Assets/github.svg"/>
-            <img class="logo" src="Assets/linkedin.svg"/>
-            <img class="logo" src="Assets/gmail.svg"/>
-            <span class="line"><hr ></span>
+            <span class="line">
+                <hr></span>
+            <img class="logo" src="Assets/github.svg" />
+            <img class="logo" src="Assets/linkedin.svg" />
+            <img class="logo" src="Assets/gmail.svg" />
+            <span class="line">
+                <hr></span>
+        </div>
+        <div id="arrow">
+            <img class="logo" src="Assets/down-arrow.svg" />
+        </div>
+    </div>
+    <div id="bio" class="panel" data-index="1">
+        <div class="title">
+            <p>bio</p>
+        </div>
+        <div class="panel-content">
+            <div id="photo">
+                <span>
+                    <img id="photo-content" src="Assets/portrait.jpg" />
+                </span>
+            </div>
+            <div id="bio-content">
+                <p>
+                    Hello! I’m Ellie Cheng (formally Yu-Hsi Cheng).
+                    I’m a Computer Science and Engineering major at
+                    UCLA with a special interest in cybersecurity
+                    and artificial intelligence, and especially
+                    the effects of one on the other.
+                </p>
+                <p>
+                    When I’m not coding, I like to read and draw.
+                    I especially love learning new things, computer
+                    science related or not.
+                </p>
+                <p>
+                    Currently, I am seeking internships in software
+                    engineering to enhance my skills as a developer.
+                    My goal is to develope my own products to make
+                    the world a safer place with technology.
+                </p>
+            </div>
         </div>
     </div>
 </body>
+<script src="main.js"></script>
 
 </html>

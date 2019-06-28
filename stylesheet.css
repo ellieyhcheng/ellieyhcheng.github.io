@@ -5,6 +5,8 @@
     --secondary: #E7F9F7;
     --ternary: #CCC2D7;
     --navbar-height: 80px;
+    --panel-height: calc(100vh - var(--navbar-height)); 
+    --panel-content-height: calc(var(--panel-height) - 100px);
 }
 
 body {
@@ -16,6 +18,38 @@ p {
     margin: 0;
 }
 
+/********** panels **********/
+.panel {
+    width: 100%;
+    height: var(--panel-height);
+    position: absolute;
+    left: 0;
+}
+
+.panel-content {
+    width: 100%;
+    height: var(--panel-content-height);
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    justify-content:center;
+    align-items: center;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 60px;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+/******* navbar ********/
 #navbar-desktop {
     background: var(--light);
     position: fixed;
@@ -24,9 +58,63 @@ p {
     left: 0px;
     top: 0px;
     z-index: 1000;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+#left-decor {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+#left-decor > .logo {
+    height: 60px;
+}
+
+#left-decor > .line {
+    width: calc(95% - 50px);
+}
+
+#left-decor > .line > hr {
+    color: var(--dark);
+}
+
+#right-decor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16vw;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+#contact-icons {  
+    height: 30px;
+    width: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#contact-icons > .logo {
+    height: 100%;
+    margin: 0 1%;
+}
+
+#right-decor > .line {
+    width: calc(95% - 100px);
+}
+
+#right-decor > .line > hr {
+    color: var(--dark);
 }
 
 #menu {
@@ -35,6 +123,10 @@ p {
     justify-content: space-between;
     height: 40%;
     width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .menu-item {
@@ -54,14 +146,11 @@ p {
     border-left: 0.09em var(--dark) solid !important;
 }
 
+/********** home **********/
+
 #home {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: calc(100% - var(--navbar-height));
-    position: absolute;
-    top: var(--navbar-height);
-    left: 0;
     align-items: center;
     justify-content: center;
 }
@@ -70,16 +159,19 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50vw;
+    width: 40vw;
 }
 
 #top-decor > .line {
     width: 40%;
 }
 
-
 #top-decor > .logo {
-    width: 12%;
+    width: 65px;
+    color: var(--secondary);
+}
+
+#top-decor > .line > hr {
     color: var(--secondary);
 }
 
@@ -87,7 +179,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50vw;
+    width: 40vw;
+    margin-bottom: 38px;
 }
 
 #bottom-decor > .line {
@@ -95,39 +188,126 @@ p {
 }
 
 #bottom-decor > .logo {
-    width: 6%;
+    width: 32px;
 }
 
-.line > hr {
+#bottom-decor > .line > hr {
     color: var(--secondary);
 }
 
 #name-title {
     font-weight: 600;
-    font-size: 96px;
+    font-size: 98px;
     letter-spacing: 0.2em;
     color: var(--primary);
-    margin: 5vh 0;
+    margin: 38px 0;
 }
 
 #subtitle {
     font-weight: 600;
-    font-size: 36px;
+    font-size: 30px;
     letter-spacing: 0.2em;
     color: var(--ternary);
-    margin-bottom: 10vh;
+    margin-bottom: 78px;
+}
+
+#arrow {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+}
+
+#arrow > .logo {
+    width: 34px;
+}
+
+/********* bio ********/
+#photo {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    max-width: 280px;
+    min-width: 280px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#photo::before {
+    display: block;
+    content: "";
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top: 1px solid var(--secondary);
+    border-left: 1px solid var(--secondary);
+}
+
+#photo > span::after {
+    display: block;
+    content: "";
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-right: 1px solid var(--secondary);
+    border-bottom: 1px solid var(--secondary);
+}
+
+#photo-content {
+    width: 250px;
+    position: relative;
+    object-position: center center;
+}
+
+#bio-content {
+    color: var(--ternary);
+    max-width: 650px;
+    width: 60%;
+    margin: 30px;
+}
+
+#bio-content > p {
+    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 /****** Tablet ******/
-
+/* it's kind of weird right now */
 @media only screen and (max-width: 970px) {
     .menu-item {
         font-size: 1.5vw;
     }
+
+    #top-decor > .logo {
+        width: 17%;
+    }
+    
+    #name-title {
+        font-size: 10.2vw;
+    }
+
+    #subtitle {
+        font-size: 3.1vw;
+    }
+
+    #bottom-decor > .logo {
+        width: 8%;
+    }  
+
+    #arrow > .logo {
+        width: 7%;
+    }
 }
 
 /****** Mobile ******/
-
+/* it's so broken right now */
 @media only screen and (max-width: 760px) {
     #navbar-desktop {
         height: 10vh;
