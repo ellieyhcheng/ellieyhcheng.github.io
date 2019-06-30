@@ -5,11 +5,15 @@ panels.forEach(panel => {
     const top = panel.dataset.index * (panelHeight) + navbarHeight;
     panel.style.height = panelHeight + 'px';
     panel.style.top = top + 'px';
-})
+});
 
-// const projects = document.querySelectorAll('.project');
-// projects.forEach(project => {
-//     const top = project.dataset.index * (400) + 100;
-//     project.style.top = top + 'px';
+function menuClick() {
+    const panel = document.querySelector(`#${this.innerText}`);
+    const top = parseInt(panel.style.top);
+    scrollTo(0, top - 80);
+};
 
-// })
+const menu = document.querySelectorAll(".menu-item");
+menu.forEach(item => {
+    item.addEventListener('click', menuClick);
+});

@@ -9,10 +9,13 @@
     --panel-content-height: 560px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--dark);
     font-family: 'Dosis', sans-serif;
-    scroll-snap-type: y mandatory;
 }
 
 p {
@@ -29,6 +32,10 @@ ul {
     padding: 0;
 }
 
+hr {
+    border-width: 0.1px;
+}
+
 /********** panels **********/
 #panel-container {
     display: flex;
@@ -41,7 +48,6 @@ ul {
     height: var(--panel-height);
     position: absolute;
     left: 0;
-    scroll-snap-align: start;
 }
 
 .panel-content {
@@ -53,6 +59,7 @@ ul {
     left: 0;
     justify-content:center;
     align-items: center;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .title {
@@ -98,8 +105,12 @@ ul {
     -o-transform: translate(0, -50%);
 }
 
-#left-decor > .logo {
+#left-decor > a {
     height: 60px;
+}
+
+#left-decor > a > .logo {
+    height: 100%;
 }
 
 #left-decor > .line {
@@ -132,7 +143,11 @@ ul {
     justify-content: space-evenly;
 }
 
-#contact-icons > .logo {
+#contact-icons > a {
+    width: 100%;
+}
+
+#contact-icons > a > .logo {
     height: 100%;
     margin: 0 1%;
 }
@@ -172,14 +187,19 @@ ul {
     padding: 0 5px;
     font-size: 1em;
     letter-spacing: 0.3em;
+    cursor: pointer;
 }
 
 #menu div:first-child {
     border-left: 0.09em var(--dark) solid !important;
 }
 
-/********** home **********/
+.menu-selected {
+    background-color: var(--dark);
+    color: var(--light);
+}
 
+/********** home **********/
 #home {
     display: flex;
     flex-direction: column;
@@ -226,8 +246,12 @@ ul {
     width: 30%;
 }
 
-#bottom-decor > .logo {
+#bottom-decor > a {
     width: 32px;
+}
+
+#bottom-decor > a > img {
+    width: 100%;
 }
 
 #bottom-decor > .line > hr {
@@ -392,7 +416,7 @@ ul {
 #tab-container {
     display: flex;
     width: 800px;
-    height: 400px;
+    height: 350px;
     justify-content: flex-end;
 }
 
@@ -492,6 +516,36 @@ ul {
     top: 0;
     /* right: 0; */
     right: -2px;
+}
+
+#footer {
+    width: 100%;
+    position: absolute;
+    top: 3430px;
+    left: 0;
+    color: var(--secondary);
+    letter-spacing: 0.1em;
+}
+
+#footer > hr {
+    color: var(--secondary);
+    width: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#footer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#footer > div > img {
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 /****** Tablet ******/
