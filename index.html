@@ -40,62 +40,257 @@
                 <hr></span>
         </div>
     </div>
-    <div id="home" class="panel" data-index="0">
-        <div id="top-decor">
-            <span class="line">
-                <hr></span>
-            <img class="logo" src="Assets/logo-iceblue.svg" />
-            <span class="line">
-                <hr></span>
-        </div>
-        <div id="name-title">
-            <p>ELLIE CHENG</p>
-        </div>
-        <div id="subtitle">
-            <p>software engineer building a safer world</p>
-        </div>
-        <div id="bottom-decor">
-            <span class="line">
-                <hr></span>
-            <img class="logo" src="Assets/github.svg" />
-            <img class="logo" src="Assets/linkedin.svg" />
-            <img class="logo" src="Assets/gmail.svg" />
-            <span class="line">
-                <hr></span>
-        </div>
-        <div id="arrow">
-            <img class="logo" src="Assets/down-arrow.svg" />
-        </div>
-    </div>
-    <div id="bio" class="panel" data-index="1">
-        <div class="title">
-            <p>bio</p>
-        </div>
-        <div class="panel-content">
-            <div id="photo">
-                <span>
-                    <img id="photo-content" src="Assets/portrait.jpg" />
-                </span>
+    <div id="panel-container">
+        <div id="home" class="panel" data-index="0">
+            <div id="home-content">
+                <div id="top-decor">
+                    <span class="line">
+                        <hr></span>
+                    <img class="logo" src="Assets/logo-iceblue.svg" />
+                    <span class="line">
+                        <hr></span>
+                </div>
+                <div id="name-title">
+                    <p>ELLIE CHENG</p>
+                </div>
+                <div id="subtitle">
+                    <p>software engineer building a safer world</p>
+                </div>
+                <div id="bottom-decor">
+                    <span class="line">
+                        <hr></span>
+                    <img class="logo" src="Assets/github.svg" />
+                    <img class="logo" src="Assets/linkedin.svg" />
+                    <img class="logo" src="Assets/gmail.svg" />
+                    <span class="line">
+                        <hr></span>
+                </div>
             </div>
-            <div id="bio-content">
-                <p>
-                    Hello! I’m Ellie Cheng (formally Yu-Hsi Cheng).
-                    I’m a Computer Science and Engineering major at
-                    UCLA with a special interest in cybersecurity
-                    and artificial intelligence, and especially
-                    the effects of one on the other.
-                </p>
-                <p>
-                    When I’m not coding, I like to read and draw.
-                    I especially love learning new things, computer
-                    science related or not.
-                </p>
-                <p>
-                    Currently, I am seeking internships in software
-                    engineering to enhance my skills as a developer.
-                    My goal is to develope my own products to make
-                    the world a safer place with technology.
-                </p>
+            <div id="arrow">
+                <img class="logo" src="Assets/down-arrow.svg" />
+            </div>
+        </div>
+        <div id="bio" class="panel" data-index="1">
+            <div class="title">
+                <p>bio</p>
+            </div>
+            <div class="panel-content">
+                <div id="photo">
+
+                    <img id="photo-content" src="Assets/portrait.jpg" />
+
+                </div>
+                <div id="bio-content">
+                    <p>
+                        Hello! I’m Ellie Cheng (formally Yu-Hsi Cheng).
+                        I’m a
+                        <span class="hl">Computer Science and Engineering</span> major at
+                        UCLA with a special interest in <span class="hl">cybersecurity</span>
+                        and <span class="hl">artificial intelligence</span>, and especially
+                        the effects of one on the other.
+                    </p>
+                    <p>
+                        When I’m not coding, I like to read and draw.
+                        I especially love learning new things, computer
+                        science related or not.
+                    </p>
+                    <p>
+                        Currently, I am seeking internships in <span class="hl">software
+                            engineering</span> to enhance my skills as a developer.
+                        My goal is to develope my own products to make
+                        the world a safer place with technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio" class="panel" data-index="2">
+            <div class="title">
+                <p>portfolio</p>
+            </div>
+            <div class="panel-content">
+                <div class="project" data-index="0">
+                    <div class="project-cover">
+                        <img src="Assets/project1.png" />
+                    </div>
+                    <div class="project-file">
+                        <div class="project-description">
+                            <p>
+                                Developing a website with other students
+                                and ACM AI that will provide students with
+                                information about research opportunities, news,
+                                and faculty centered around AI and machine
+                                learning at UCLA.
+                            </p>
+                        </div>
+                        <div class="project-skills">
+                            <p>React.js</p>
+                            <p>HTML</p>
+                            <p>SCSS</p>
+                        </div>
+                        <div class="project-title">
+                            <p>Research UCLA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio2" class="panel" data-index="3">
+            <div class="panel-content no-title">
+                <div class="project" data-index="0">
+                    <div class="project-cover">
+                        <img src="Assets/project2.png" />
+                    </div>
+                    <div class="project-file">
+                        <div class="project-description">
+                            <p>
+                                Created CTF questions, using Python, Docker, Git, Linux, in topics like cryptography and
+                                reverse engineering.
+                            </p>
+                        </div>
+                        <div class="project-skills">
+                            <p>Python</p>
+                            <p>C/C++</p>
+                            <p>Docker</p>
+                        </div>
+                        <div class="project-title">
+                            <p>California CTF</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="resume" class="panel" data-index="4">
+            <div class="title">
+                <p>résumé</p>
+            </div>
+            <div class="panel-content">
+                <div id="tab-container">
+                    <ul id="tabs">
+                        <span id="tab-hl"></span>
+                        <li>
+                            <div class="tab-selected tab" data-index="0">
+                                <span>EDUCATION</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tab" data-index="1">
+                                <span>UCLA ACM</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tab" data-index="2">
+                                <span>NESL</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tab" data-index="3">
+                                <span>SKILLS</span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div id="tab-contents">
+                        <div class="content-selected tab-content" data-index="0">
+                            <div>
+                                <div class="tab-body">
+                                    <div class="tab-logo">
+                                        <img src="Assets/UCLA-logo.jpg" />
+                                    </div>
+                                    <div>
+                                        <div class="tab-title">
+                                            <p>University of California, Los Angeles</p>
+                                            <p>Computer Science and Engineering, B. S.</p>
+                                        </div>
+                                        <p style="padding-bottom: 2%">Relevant Coursework:</p>
+                                        <ul style="padding-left: 8%">
+                                            <p>- Data Structure</p>
+                                            <p>- Computer Organization</p>
+                                            <p>- Algorithm & Complexity</p>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-date">
+                                <p>Expected 2022</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" data-index="1">
+                            <div>
+                                <div class="tab-body">
+                                    <div class="tab-logo">
+                                        <img src="Assets/acm-logo.jpg" />
+                                    </div>
+                                    <div>
+                                        <div class="tab-title">
+                                            <p>UCLA ACM</p>
+                                            <p>Cyber Committee CTF Director, Dev Team Officer</p>
+                                        </div>
+                                        <p style="padding-bottom: 2%">
+                                            Organized events such as Capture
+                                            the Flag Nights and California CTF 2019 by handling
+                                            food logistics and communication between departments
+                                            and writing workshop materials and practice CTF questions.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-date">
+                                <p>2018 - Present</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" data-index="2">
+                            <div>
+                                <div class="tab-body">
+                                    <div class="tab-logo">
+                                        <img src="Assets/nesl-logo.jpg" />
+                                    </div>
+                                    <div>
+                                        <div class="tab-title">
+                                            <p>NESL</p>
+                                            <p>Undergraduate Research Assistant</p>
+                                        </div>
+                                        <p style="padding-bottom: 2%">
+                                            Working with OP-TEE ARM TrustZone technology
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-date">
+                                <p>April 2019 - Present</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" data-index="3">
+                                <div>
+                                    <div class="tab-body">
+                                        <div>
+                                            <div class="tab-title">
+                                                <p>Technical Skills</p>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <p style="padding-bottom: 2%">Programming Languages:</p>
+                                                <ul style="padding-left: 8%">
+                                                    <p>- C/C++</p>
+                                                    <p>- Python</p>
+                                                    <p>- Java</p>
+                                                    <p>- Javascript</p>
+                                                    <p>- HTML</p>
+                                                    <p>- CSS</p>
+                                                </ul>
+                                                <p style="padding-bottom: 2%">Frameworks/Tools:</p>
+                                                <ul style="padding-left: 8%">
+                                                    <p>- React</p>
+                                                    <p>- Linux</p>
+                                                    <p>- Docker</p>
+                                                    <p>- Git</p>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
