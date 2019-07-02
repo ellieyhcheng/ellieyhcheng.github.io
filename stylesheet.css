@@ -59,7 +59,7 @@ hr {
     left: 0;
     justify-content:center;
     align-items: center;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 }
 
 .title {
@@ -188,6 +188,7 @@ hr {
     font-size: 1em;
     letter-spacing: 0.3em;
     cursor: pointer;
+    transition: 0.4s;
 }
 
 #menu div:first-child {
@@ -350,25 +351,34 @@ hr {
 
 .project-cover {
     width: 500px;
-    height: 350px;
+    height: 300px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 5;
+    transition: 1s;
 }
 
 .project-cover > img {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    right:0;
+    bottom:0;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
+    transition: 1s;
 }
 
 .project-file {
+    z-index: 0;
     position: absolute;
     bottom: 0;
     right: 0;
     width: 500px;
     height: 300px;
-    border: 1px solid var(--secondary);    
+    border: 1px solid var(--secondary);
+    transition: 1s;
+    background-color: var(--dark);
 }
 
 .project-description {
@@ -412,12 +422,37 @@ hr {
     height: 100%;
 }
 
+@keyframes coverHover {
+    0%   {top:0px;}
+    50%  {top:-120px; left:-50px;}
+    100% {top:0px;left:0px;}
+}
+
+@keyframes coverLeave {
+    0%   {top:0px;}
+    50%  {top:-120px; left:-50px;}
+    100% {top:0px;left:0px;}
+}
+
+@keyframes fileHover {
+    0%   {bottom:0px;}
+    50%  {bottom:-120px; right:-50px;}
+    100% {bottom:0px;right:0px;}
+}
+
+@keyframes fileLeave {
+    0%   {bottom:0px;}
+    50%  {bottom:-120px; right:-50px;}
+    100% {bottom:0px;right:0px;}
+}
+
 /******** resume ********/
 #tab-container {
     display: flex;
     width: 800px;
     height: 350px;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    
 }
 
 #tabs {
@@ -439,22 +474,30 @@ hr {
 }
 
 .tab {
+    left: 0;
     height: 43px;
-    padding: 0 10px 0px 0px;
+    padding: 0 9px 0px 0px;
     width: 110px;
     display: flex;
     align-items: center;
     justify-content: right;
     background: transparent;
-    /* box-sizing: border-box; */
-    /* border-right: var(--ternary) 1px solid; */
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(.22,.61,.36,1) 0.1s;
 }
 
 #tab-contents {
-    max-width: 85%;
+    max-width: 680px;
+    width: 680px;
+    min-width: 680px;
     position: relative;
     letter-spacing: 0.1em;
     color: var(--secondary);
+}
+
+.tab-content-wrapper {
+    width: 500px;
+    min-width: 500px;
 }
 
 .tab-content {
@@ -470,13 +513,15 @@ hr {
 
 .tab-body {
     display: flex;
-    justify-content: space-between;
-    width: 85%;
+    width: 100%;
 }
 
 .tab-logo {
-    width: 18%;
+    width: 60px;
+    max-width: 60px;
+    min-width: 60px;
     padding-top: 1%;
+    margin-right: 20px;
 }
 
 .tab-logo > img {
@@ -489,7 +534,7 @@ hr {
 }
 
 .tab-date {
-    width: 40%;
+    min-width: 140px;
     color: var(--ternary);
     font-weight: 600;
 }
@@ -514,9 +559,16 @@ hr {
     z-index: 10;
     position: absolute;
     top: 0;
-    /* right: 0; */
+    transition: 0.3s cubic-bezier(.45,.05,.55,.95);
     right: -2px;
 }
+
+.skill-list {
+    margin-left: 50px;
+    width: 200px;
+}
+
+/**** footer ****/
 
 #footer {
     width: 100%;
