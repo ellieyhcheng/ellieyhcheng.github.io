@@ -88,7 +88,6 @@ function tabClick() {
     this.classList.add('tab-selected');
     const index = this.dataset.index;
     const contents = document.querySelectorAll('.tab-content');
-    const contentArray = Array.from(contents);
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => {
         if (tab != this)
@@ -96,9 +95,13 @@ function tabClick() {
     });
 
     contents.forEach(content => {
-        if (content.dataset.index === index)
+        if (content.dataset.index === index) {
+            content.style.opacity = 1;
             content.classList.add('content-selected');
+            // content.style.opacity = 1;
+        }
         else {
+            content.style.opacity = 0;
             content.classList.remove('content-selected');
         }
     });

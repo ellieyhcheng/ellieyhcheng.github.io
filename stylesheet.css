@@ -76,6 +76,7 @@ hr {
     -ms-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     text-align: center;
+    z-index: 20;
 }
 
 /******* navbar ********/
@@ -447,12 +448,17 @@ hr {
 }
 
 /******** resume ********/
+#resume-pdf {
+    color: var(--ternary);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
 #tab-container {
     display: flex;
     width: 800px;
     height: 350px;
     justify-content: flex-start;
-    
 }
 
 #tabs {
@@ -505,10 +511,13 @@ hr {
     display: flex;
     justify-content: space-between;
     visibility: hidden;
+    opacity: 0;
     z-index: -1;
     position: absolute;
     top: 0px;
     left: 0px;
+    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+        visibility 0s linear 0.3s;
 }
 
 .tab-body {
@@ -550,6 +559,9 @@ hr {
     visibility: visible;
     top: 0px;
     left: 0px;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+        visibility 0s linear 0.3s;
 }
 
 #tab-hl {
