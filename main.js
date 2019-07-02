@@ -44,6 +44,15 @@ menu.forEach(item => {
     item.addEventListener('click', menuClick);
 });
 
+function arrowClick() {
+    const panel = document.querySelector(`#bio`);
+    const top = parseInt(panel.style.top);
+    scrollTo(0, top - 80);
+}
+const arrow = document.querySelector('#arrow');
+arrow.addEventListener('click', arrowClick);
+
+
 function projectHover() {
     const projectCover = this.children[0];
     const projectFile = this.children[1];
@@ -76,8 +85,6 @@ function projectLeave() {
     projectFile.style.animation = 'fileLeave 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
 }
 
-const projectCovers = document.querySelectorAll('.project-cover');
-const projectFiles = document.querySelectorAll('.project-file');
 const projects = document.querySelectorAll('.project');
 projects.forEach(project => {
     project.addEventListener('mouseover', projectHover);

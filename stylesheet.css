@@ -277,16 +277,30 @@ hr {
 }
 
 #arrow {
-    width: 50vw;
+    width: max-content;
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 5%;
+    cursor: pointer;
+    animation: arrowJump 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s infinite forwards;
 }
 
 #arrow > .logo {
     width: 34px;
 }
+
+@-webkit-keyframes arrowJump { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-20px);} 
+    60% {-webkit-transform: translateY(-10px);} 
+ } 
+ 
+ @keyframes arrowJump { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-20px);} 
+    60% {transform: translateY(-10px);} 
+ }
 
 /********* bio ********/
 #photo {
@@ -635,8 +649,11 @@ hr {
         width: 8%;
     }  
 
+    #arrow {
+        width: 4vw;
+    }
     #arrow > .logo {
-        width: 7%;
+        width: 100%;
     }
 }
 
