@@ -1,27 +1,39 @@
-const panels = document.querySelectorAll(".panel");
-panels.forEach(panel => {
-    const navbarHeight = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--navbar-height'));
-    const panelHeight = 670;
-    const top = panel.dataset.index * (panelHeight) + navbarHeight;
-    panel.style.height = panelHeight + 'px';
-    panel.style.top = top + 'px';
+document.addEventListener("DOMContentLoaded", function() {
+    updateMenu();
+    document.addEventListener('scroll', updateMenu);
+    const menu = document.querySelectorAll(".menu-item");
+    menu.forEach(item => {
+        item.addEventListener('click', menuClick);
+    });
+    const projectCovers = document.querySelectorAll('.project-cover');
+    projectCovers.forEach(project => {
+        project.addEventListener('mouseover', projectClick);
+        project.parentElement.addEventListener('mouseleave', projectLeave);
+    });
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', tabClick);
+    })
 });
+
+const sections = Array.from(document.getElementById('panel-container').children);
 
 function updateMenu() {
     var y = window.pageYOffset || document.documentElement.scrollTop;
-    panels.forEach(panel => {
-        const top = parseInt(panel.style.top);
-        if (y - top <= 335 && y - top >= -335) {
+    sections.forEach((section, i) => {
+        var halfWindow = window.innerHeight / 2
+        var error = section.scrollHeight - halfWindow;
+        if (y - section.offsetTop < error && y - section.offsetTop >= -halfWindow) {
             const menu = document.querySelectorAll(".menu-item");
             menu.forEach(item => {
-                if (panel.id.includes(item.innerText)) {
+                if (section.id.includes(item.innerText)) {
                     item.classList.add('menu-selected')
                 }
             })
         } else {
             const menu = document.querySelectorAll(".menu-item");
             menu.forEach(item => {
-                if (item.innerText === panel.id) {
+                if (item.innerText === section.id) {
                     item.classList.remove('menu-selected')
                 }
             })
@@ -29,67 +41,52 @@ function updateMenu() {
     });
 }
 
-updateMenu();
-
-document.addEventListener('scroll', updateMenu);
-
 function menuClick() {
     const panel = document.querySelector(`#${this.innerText}`);
     const top = parseInt(panel.style.top);
     scrollTo(0, top - 80);
 };
 
-const menu = document.querySelectorAll(".menu-item");
-menu.forEach(item => {
-    item.addEventListener('click', menuClick);
-});
+function projectClick() {
+    setTimeout(() => {
+        const project = this.parentElement;
+        const projectCover = this;
+        const projectFile = project.children[1];
+        const projectImg = projectCover.children[0];
+        projectCover.style.filter = 'grayscale(100%)';
+        projectCover.style.opacity = '0.6';
+        projectCover.style.zIndex = 0;
+        projectImg.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)';
+        projectCover.style.animation = 'coverHover 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
 
-function arrowClick() {
-    const panel = document.querySelector(`#bio`);
-    const top = parseInt(panel.style.top);
-    scrollTo(0, top - 80);
-}
-const arrow = document.querySelector('#arrow');
-arrow.addEventListener('click', arrowClick);
+        projectFile.style.zIndex = 5;
+        projectFile.style.opacity = '1';
+        projectFile.style.boxShadow = '-2px -2px 10px 0px rgba(0,0,0,0.4)';
+        projectFile.style.animation = 'fileHover 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
+    }, 200);
 
-
-function projectHover() {
-    const projectCover = this.children[0];
-    const projectFile = this.children[1];
-    const projectImg = projectCover.children[0];
-    projectCover.style.filter = 'grayscale(100%)';
-    projectCover.style.opacity = '0.6';
-    projectCover.style.zIndex = 0;
-    projectImg.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)';
-    projectCover.style.animation = 'coverHover 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
-
-    projectFile.style.zIndex = 5;
-    projectFile.style.opacity = '1';
-    projectFile.style.boxShadow = '-2px -2px 10px 0px rgba(0,0,0,0.4)';
-    projectFile.style.animation = 'fileHover 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
 }
 
 function projectLeave() {
-    const projectCover = this.children[0];
-    const projectFile = this.children[1];
-    const projectImg = projectCover.children[0];
-    projectCover.style.filter = 'grayscale(0)';
-    projectCover.style.opacity = '1';
-    projectCover.style.zIndex = 5;
-    projectImg.style.boxShadow = '5px 5px 10px 0px rgba(0,0,0,0.3)';
-    projectCover.style.animation = 'coverLeave 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
+    setTimeout(() => {
+        const projectCover = this.children[0];
+        const projectFile = this.children[1];
+        const projectImg = projectCover.children[0];
+        projectCover.style.filter = 'grayscale(0)';
+        projectCover.style.opacity = '1';
+        projectCover.style.zIndex = 5;
+        projectImg.style.boxShadow = '5px 5px 10px 0px rgba(0,0,0,0.3)';
+        projectCover.style.animation = 'coverLeave 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
 
-    projectFile.style.zIndex = 0;
-    projectFile.style.opacity = '0.8';
-    projectFile.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)';
-    projectFile.style.animation = 'fileLeave 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
+        projectFile.style.zIndex = 0;
+        projectFile.style.opacity = '0.8';
+        projectFile.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)';
+        projectFile.style.animation = 'fileLeave 0.8s cubic-bezier(0,.99,.72,.98) 0s 1 alternate';
+    }, 300);
+
 }
 
-const projects = document.querySelectorAll('.project');
-projects.forEach(project => {
-    project.addEventListener('mouseover', projectHover);
-    project.addEventListener('mouseleave', projectLeave);
-});
+
 
 function tabClick() {
     this.classList.add('tab-selected');
@@ -105,7 +102,6 @@ function tabClick() {
         if (content.dataset.index === index) {
             content.style.opacity = 1;
             content.classList.add('content-selected');
-            // content.style.opacity = 1;
         }
         else {
             content.style.opacity = 0;
@@ -118,7 +114,3 @@ function tabClick() {
 
 }
 
-const tabs = document.querySelectorAll('.tab');
-tabs.forEach(tab => {
-    tab.addEventListener('click', tabClick);
-})

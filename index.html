@@ -19,19 +19,28 @@
             </a>
         </div>
         <div id="menu">
-            <div class="menu-item">
-                <p>home</p>
-            </div>
-            <div class="menu-item">
-                <p>bio</p>
-            </div>
-            <div class="menu-item">
-                <p>portfolio</p>
-            </div>
-            <div class="menu-item">
-                <p>resume</p>
-            </div>
+            <a href="#home">
+                <div class="menu-item">
+                    <p>home</p>
+                </div>
+            </a>
+            <a href="#bio">
+                <div class="menu-item">
+                    <p>bio</p>
+                </div>
+            </a>
+            <a href="#portfolio">
+                <div class="menu-item">
+                    <p>portfolio</p>
+                </div>
+            </a>
+            <a href="#resume">
+                <div class="menu-item">
+                    <p>resume</p>
+                </div>
+            </a>
         </div>
+
         <div id="right-decor">
             <div id="contact-icons">
                 <a href="https://github.com/ellieyhcheng">
@@ -49,7 +58,7 @@
         </div>
     </div>
     <div id="panel-container">
-        <div id="home" class="panel" data-index="0">
+        <div id="home" class="panel">
             <div id="home-content">
                 <div id="top-decor">
                     <span class="line">
@@ -81,10 +90,10 @@
                 </div>
             </div>
             <div id="arrow">
-                <img class="logo" src="Assets/down-arrow.svg" />
+                <a href="#bio"><img class="logo" src="Assets/down-arrow.svg" /></a>
             </div>
         </div>
-        <div id="bio" class="panel" data-index="1">
+        <div id="bio" class="panel">
             <div class="title">
                 <p>bio</p>
             </div>
@@ -99,79 +108,125 @@
                         <span class="hl">Computer Science and Engineering</span> major at
                         UCLA with a special interest in <span class="hl">cybersecurity</span>
                         and <span class="hl">artificial intelligence</span>, and especially
-                        the effects of one on the other.
+                        the effect they have on society.
                     </p>
                     <p>
                         When I’m not coding, I like to read and draw.
-                        I especially love learning new things, computer
-                        science related or not.
+                        I've also developed an affinity for calligraphy recently.
                     </p>
                     <p>
                         Currently, I am seeking internships in <span class="hl">software
                             engineering</span> to enhance my skills as a developer.
-                        My goal is to develope my own products to make
+                        My goal is to develop my own products to make
                         the world a safer place with technology.
                     </p>
                 </div>
             </div>
         </div>
-        <div id="portfolio" class="panel" data-index="2">
-            <div class="title">
-                <p>portfolio</p>
-            </div>
-            <div class="panel-content">
-                <div class="project" data-index="0">
-                    <div class="project-cover">
-                        <img src="Assets/project1.png" />
+        <div id="portfolio">
+            <div class="panel">
+                <div class="title">
+                    <p>portfolio</p>
+                </div>
+                <div class="panel-content">
+                    <div class="project">
+                        <div class="project-cover">
+                            <img src="Assets/project0.jpg" />
+                        </div>
+                        <div class="project-file">
+                            <div class="project-description">
+                                <p>
+                                    A course planner web app made by a UCLA student for
+                                    UCLA students. With intuitive drag and drop functionality, personalized
+                                    curriculum listing based on majors, and accessible course information,
+                                    it is a step up from the encumbered Excel sheet and worn-out pen
+                                    and paper.
+                                </p>
+                            </div>
+                            <div class="project-skills">
+                                <p>React.js</p>
+                                <p>Node.js</p>
+                                <p>MongoDB</p>
+                                <p>HTML</p>
+                                <p>SCSS</p>
+                            </div>
+                            <div class="project-title">
+                                <a href="https://aetla.herokuapp.com">
+                                    <p>Aetla</p>
+                                </a>
+                            </div>
+                            <div class="project-link">
+                                <a href="https://aetla.herokuapp.com">
+                                    <p>Visit Aetla</p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-file">
-                        <div class="project-description">
-                            <p>
-                                Developing a website with other students
-                                and ACM AI that will provide students with
-                                information about research opportunities, news,
-                                and faculty centered around AI and machine
-                                learning at UCLA.
-                            </p>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-content no-title">
+                    <div class="project">
+                        <div class="project-cover">
+                            <img src="Assets/project1.png" />
                         </div>
-                        <div class="project-skills">
-                            <p>React.js</p>
-                            <p>HTML</p>
-                            <p>SCSS</p>
+                        <div class="project-file">
+                            <div class="project-description">
+                                <p>
+                                    Developing a website with other students
+                                    and ACM AI that will provide students with
+                                    information about research opportunities, news,
+                                    and faculty centered around AI and machine
+                                    learning at UCLA.
+                                </p>
+                            </div>
+                            <div class="project-skills">
+                                <p>React.js</p>
+                                <p>HTML</p>
+                                <p>SCSS</p>
+                            </div>
+                            <div class="project-title">
+                                <a href="https://github.com/yvonneCh/ResearchUCLA">
+                                    <p>Research UCLA</p>
+                                </a>
+                            </div>
+                            <div class="project-link">
+                                <a href="https://github.com/yvonneCh/ResearchUCLA">
+                                    <p>Github</p>
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-title">
-                            <p>Research UCLA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-content no-title">
+                    <div class="project">
+                        <div class="project-cover">
+                            <img src="Assets/project2.png" />
+                        </div>
+                        <div class="project-file">
+                            <div class="project-description">
+                                <p>
+                                    Created CTF questions, using Python, Docker, Git, Linux, in topics like cryptography
+                                    and
+                                    reverse engineering.
+                                </p>
+                            </div>
+                            <div class="project-skills">
+                                <p>Python</p>
+                                <p>C/C++</p>
+                                <p>Docker</p>
+                            </div>
+                            <div class="project-title">
+                                <p>California CTF</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="portfolio2" class="panel" data-index="3">
-            <div class="panel-content no-title">
-                <div class="project" data-index="0">
-                    <div class="project-cover">
-                        <img src="Assets/project2.png" />
-                    </div>
-                    <div class="project-file">
-                        <div class="project-description">
-                            <p>
-                                Created CTF questions, using Python, Docker, Git, Linux, in topics like cryptography and
-                                reverse engineering.
-                            </p>
-                        </div>
-                        <div class="project-skills">
-                            <p>Python</p>
-                            <p>C/C++</p>
-                            <p>Docker</p>
-                        </div>
-                        <div class="project-title">
-                            <p>California CTF</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="resume" class="panel" data-index="4">
+        <div id="resume" class="panel">
             <div class="title">
                 <p>resume</p>
                 <a id="resume-pdf" href="YuHsi_Ellie_Cheng_Resume.pdf" target="_blank">
@@ -239,7 +294,7 @@
                                     <div>
                                         <div class="tab-title">
                                             <p>UCLA ACM</p>
-                                            <p>Cyber Committee CTF Director, Dev Team Officer</p>
+                                            <p>Cyber Committee CTF Director</p>
                                         </div>
                                         <p style="padding-bottom: 2%">
                                             Organized events such as Capture
@@ -266,7 +321,8 @@
                                             <p>Undergraduate Research Assistant</p>
                                         </div>
                                         <p style="padding-bottom: 2%">
-                                            Working with OP-TEE ARM TrustZone technology
+                                                Working with OP-TEE Arm TrustZone technology on Raspberry Pi 3 and Hikey to 
+                                                experiment with controlling peripherals from the OP-TEE OS core using C
                                         </p>
                                     </div>
                                 </div>
@@ -288,7 +344,6 @@
                                                 <ul style="padding-left: 8%">
                                                     <p>- C/C++</p>
                                                     <p>- Python</p>
-                                                    <p>- Java</p>
                                                     <p>- Javascript</p>
                                                     <p>- HTML</p>
                                                     <p>- CSS</p>
@@ -297,8 +352,11 @@
                                             <div class="skill-list">
                                                 <p style="padding-bottom: 2%">Frameworks/Tools:</p>
                                                 <ul style="padding-left: 8%">
-                                                    <p>- React</p>
+                                                    <p>- React.js</p>
+                                                    <p>- Node.js</p>
+                                                    <p>- MongoDB Atlas</p>
                                                     <p>- Linux</p>
+                                                    <p>- Flask</p>
                                                     <p>- Docker</p>
                                                     <p>- Git</p>
                                                 </ul>
