@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateMenu();
     document.addEventListener('scroll', updateMenu);
     const menu = document.querySelectorAll(".menu-item");
+    console.log(menu)
     menu.forEach(item => {
         item.addEventListener('click', menuClick);
     });
@@ -26,14 +27,14 @@ function updateMenu() {
         if (y - section.offsetTop < error && y - section.offsetTop >= -halfWindow) {
             const menu = document.querySelectorAll(".menu-item");
             menu.forEach(item => {
-                if (section.id.includes(item.innerText)) {
+                if (section.id.includes(item.innerText.toLowerCase())) {
                     item.classList.add('menu-selected')
                 }
             })
         } else {
             const menu = document.querySelectorAll(".menu-item");
             menu.forEach(item => {
-                if (item.innerText === section.id) {
+                if (item.innerText.toLowerCase() === section.id) {
                     item.classList.remove('menu-selected')
                 }
             })
@@ -42,7 +43,7 @@ function updateMenu() {
 }
 
 function menuClick() {
-    const panel = document.querySelector(`#${this.innerText}`);
+    const panel = document.querySelector(`#${this.innerText.toLowerCase()}`);
     const top = parseInt(panel.style.top);
     scrollTo(0, top - 80);
 };
