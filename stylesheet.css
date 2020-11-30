@@ -19,6 +19,9 @@ body {
     left:0;
     position: relative;
     color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 p {
@@ -90,36 +93,32 @@ img, svg {
 #name {
     background: var(--dark);
     padding: 0.6rem 4rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--light);
     letter-spacing: 0.2rem;
     text-align: center;
     position: absolute;
-    bottom: 12%;
+    bottom: 13%;
     right: -10%;
 }
 
 #menu {
-    width: 35vw;
-    height: 35vw;
-    position: absolute;
-    min-width: 450px;
-    min-height: 450px;
-    top: calc(50% - 17.5vw);
-    left: calc(50% - 17.5vw);
+    width: 100%;
+    height: 100%;
+    position: relative;
     color: var(--light);
     animation: orbit_rotate 40s infinite linear;
     animation-play-state: running;
 }
 
 #menu-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 35vw;
     height: 35vw;
-    position: absolute;
     min-width: 450px;
     min-height: 450px;
-    top: calc(50% - 17.5vw);
-    left: calc(50% - 17.5vw);
     overflow: hidden;
 }
 
