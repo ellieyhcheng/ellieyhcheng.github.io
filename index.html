@@ -1,437 +1,98 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Icons used belong to Font Awesome: https://fontawesome.com/license -->
+
 <head>
     <meta charset="UTF-8">
     <title>Ellie Cheng</title>
-    <link rel="shortcut icon" href="Assets/logo_square.png" type="image/png">
+    <link rel="shortcut icon" href="Assets/logo.svg" type="image/svg">
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">  -->
-    <link href="https://fonts.googleapis.com/css2?family=Cantarell&family=Josefin+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="navbar-desktop">
-        <div id="left-decor">
-            <div class="line"></div>
-            <a href=".">
-                <img class="logo" src="Assets/logo_blue.png" />
-            </a>
+    <div id="center">
+        <div id="center-border" class="circle"></div>
+        <div id="center-img" class="circle">
+            <img src="Assets/profile.jpg" alt="Photo of Ellie Cheng" class="circle" />
         </div>
-        <div id="menu">
-            <a href="#home">
-                <div class="menu-item">
-                    <p>Home</p>
-                </div>
-            </a>
-            <a href="#bio">
-                <div class="menu-item">
-                    <p>Bio</p>
-                </div>
-            </a>
-            <a href="#portfolio">
-                <div class="menu-item">
-                    <p>Portfolio</p>
-                </div>
-            </a>
-            <a href="#resume">
-                <div class="menu-item">
-                    <p>Resume</p>
-                </div>
-            </a>
-        </div>
-
-        <div id="right-decor">
-            <div id="contact-icons">
-                <a href="https://github.com/ellieyhcheng">
-                    <img class="logo" src="Assets/github.png" />
-                </a>
-                <a href="https://www.linkedin.com/in/yu-hsi-ellie-cheng/">
-                    <img class="logo" src="Assets/linkedin.png" />
-                </a>
-                <a href="mailto:ellieyhc@gmail.com">
-                    <img class="logo" src="Assets/gmail.png" />
-                </a>
-            </div>
-            <div class="line"></div>
+        <div id="name">
+            <p>Ellie Cheng</p>
         </div>
     </div>
-    <div id="panel-container">
-        <div id="home" class="panel">
-            <div id="home-content">
-                <div id="top-decor">
-                    <div class="line"></div>
-                    <img class="logo" src="Assets/logo_blue.png" />
-                    <div class="line"></div>
-                </div>
-                <div id="name-title">
-                    <p>ELLIE CHENG</p>
-                </div>
-                <div id="subtitle">
-                    <p>Software engineer building a safer world</p>
-                </div>
-                <div id="bottom-decor">
-                    <div class="line"></div>
-                    <a href="https://github.com/ellieyhcheng">
-                        <img class="logo" src="Assets/github.png" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/yu-hsi-ellie-cheng/">
-                        <img class="logo" src="Assets/linkedin.png" />
-                    </a>
-                    <a href="mailto:ellieyhc@gmail.com">
-                        <img class="logo" src="Assets/gmail.png" />
-                    </a>
-                    <div class="line"></div>
-                </div>
+    <div id="menu-wrapper" class="circle">
+        <div id="menu" class="circle">
+            <div class="circle menu-item">
+                <a href="https://github.com/ellieyhcheng/">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
+                        class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 496 512">
+                        <path fill="currentColor"
+                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                        </path>
+                    </svg>
+                </a>
+
             </div>
-            <div id="arrow">
-                <a href="#bio"><img class="logo" src="Assets/down_arrow.png" /></a>
-            </div>
-        </div>
-        <div id="bio" class="panel">
-            <div class="title">
-                <p>Bio</p>
-            </div>
-            <div class="panel-content">
-                <div id="photo">
-                    <img id="photo-content" src="Assets/portrait.jpg" />
-                </div>
-                <div id="bio-content">
-                    <p>
-                        Hello! I’m Ellie Cheng (formally Yu-Hsi Cheng). I'm currently a student at UCLA, majoring in 
-                        <span class="hl">Computer Science and Engineering</span> with a special interest in <span class="hl">cybersecurity</span>
-                        and <span class="hl">artificial intelligence</span>, and especially
-                        the effect they have on society. I aim to develop my own products to make
-                        the world a safer place with technology.
-                    </p>
-                    <p>
-                        When I’m not coding, I like to read and draw.
-                        I've been doing a lot of watercolor paintings recently.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id="portfolio">
-            <div class="panel">
-                <div class="title">
-                    <p>Portfolio</p>
-                </div>
-                <div class="panel-content">
-                    <div class="project">
-                        <div class="project-cover">
-                            <img src="Assets/project0.jpg" />
-                        </div>
-                        <div class="project-file">
-                            <div class="project-description">
-                                <p>
-                                    A course planner web app made by a UCLA student for
-                                    UCLA students. With intuitive drag and drop functionality, personalized
-                                    curriculum listing based on majors, and accessible course information,
-                                    it is a step up from the encumbered Excel sheet and worn-out pen
-                                    and paper.
-                                </p>
-                            </div>
-                            <div class="project-skills">
-                                <p>React.js</p>
-                                <p>Node.js</p>
-                                <p>MongoDB</p>
-                                <p>HTML</p>
-                                <p>SCSS</p>
-                            </div>
-                            <div class="project-title">
-                                <a href="https://aetla.herokuapp.com">
-                                    <p>Aetla</p>
-                                </a>
-                            </div>
-                            <div class="project-link">
-                                <a href="https://aetla.herokuapp.com">
-                                    <p>Visit Aetla</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel">
-                <div class="panel-content no-title">
-                    <div class="project">
-                        <div class="project-cover">
-                            <img src="Assets/project3.jpg" />
-                        </div>
-                        <div class="project-file">
-                            <div class="project-description">
-                                <p>
-                                    A meeting scheduler, following the example of 
-                                    When2Meet. This was a practice in UI/UX design, 
-                                    mobile responsiveness, and touch UI.
-                                </p>
-                            </div>
-                            <div class="project-skills">
-                                <p>React.js</p>
-                                <p>Node.js</p>
-                                <p>Firebase</p>
-                                <p>HTML</p>
-                                <p>SCSS</p>
-                            </div>
-                            <div class="project-title">
-                                <a href="https://meet-me-when.herokuapp.com">
-                                    <p>MeetMe</p>
-                                </a>
-                            </div>
-                            <div class="project-link">
-                                <a href="https://github.com/ellieyhcheng/meetme">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel">
-                <div class="panel-content no-title">
-                    <div class="project">
-                        <div class="project-cover">
-                            <img src="Assets/project1.png" />
-                        </div>
-                        <div class="project-file">
-                            <div class="project-description">
-                                <p>
-                                    Developing a website with other students
-                                    and ACM AI that will provide students with
-                                    information about research opportunities, news,
-                                    and faculty centered around AI and machine
-                                    learning at UCLA.
-                                </p>
-                            </div>
-                            <div class="project-skills">
-                                <p>React.js</p>
-                                <p>HTML</p>
-                                <p>SCSS</p>
-                            </div>
-                            <div class="project-title">
-                                <a href="https://github.com/yvonneCh/ResearchUCLA">
-                                    <p>Research UCLA</p>
-                                </a>
-                            </div>
-                            <div class="project-link">
-                                <a href="https://github.com/yvonneCh/ResearchUCLA">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel">
-                <div class="panel-content no-title">
-                    <div class="project">
-                        <div class="project-cover">
-                            <img src="Assets/project2.png" />
-                        </div>
-                        <div class="project-file">
-                            <div class="project-description">
-                                <p>
-                                    Created CTF questions, using Python, Docker, Git, Linux, in topics like cryptography
-                                    and
-                                    reverse engineering.
-                                </p>
-                            </div>
-                            <div class="project-skills">
-                                <p>Python</p>
-                                <p>C/C++</p>
-                                <p>Docker</p>
-                            </div>
-                            <div class="project-title">
-                                <p>California CTF</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="resume" class="panel">
-            <div class="title">
-                <p>Resume</p>
-                <a id="resume-pdf" href="YuHsi_Ellie_Cheng_Resume.pdf" target="_blank">
-                    <p>ellie-cheng.pdf</p>
+            <div class="circle menu-item">
+                <a href="mailto:ellieyhc@gmail.com">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope"
+                        class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z">
+                        </path>
+                    </svg>
                 </a>
             </div>
-            <div class="panel-content">
-                <div id="tab-container">
-                    <ul id="tabs">
-                        <span id="tab-hl"></span>
-                        <li>
-                            <div class="tab-selected tab" data-index="0">
-                                <div>EDUCATION</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="tab" data-index="1">
-                                <span>UCLA ACM</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="tab" data-index="2">
-                                <span>NESL</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="tab" data-index="3">
-                                <span>STARAI</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="tab" data-index="4">
-                                <span>SKILLS</span>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                    <div id="tab-contents">
-                        <div class="content-selected tab-content" data-index="0">
-                            <div class='tab-content-wrapper'>
-                                <div class="tab-body">
-                                    <div class="tab-logo">
-                                        <img src="Assets/UCLA-logo.jpg" />
-                                    </div>
-                                    <div>
-                                        <div class="tab-title">
-                                            <p>University of California, Los Angeles</p>
-                                            <p>Computer Science and Engineering, B. S.</p>
-                                        </div>
-                                        <p style="padding-bottom: 2%">Relevant Coursework:</p>
-                                        <ul style="padding-left: 8%">
-                                            <p>- Data Structure</p>
-                                            <p>- Algorithm & Complexity</p>
-                                            <p>- Artificial Intelligence</p>
-                                            <p>- Operating Systems Principles</p>
-                                            <p>- Programming Languages</p>
-                                            <p>- Probabilitic Programming & Relational Learning</p>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-date">
-                                <p>Expected 2022</p>
-                            </div>
-                        </div>
-                        <div class="tab-content" data-index="1">
-                            <div class='tab-content-wrapper'>
-                                <div class="tab-body">
-                                    <div class="tab-logo">
-                                        <img src="Assets/acm-logo.png" />
-                                        <img src="Assets/cyber_logo.png" />
-                                    </div>
-                                    <div>
-                                        <div class="tab-title">
-                                            <p>ACM at UCLA</p>
-                                            <p>Cyber Committee Co-President</p>
-                                        </div>
-                                        <p style="padding-bottom: 2%">
-                                            Organized events such as Capture
-                                            the Flag Nights and California CTF 2019 by handling
-                                            food logistics and communication between departments
-                                            and writing workshop materials and practice CTF questions. Currently, leading the Cyber officers in creating workshops for novices interested in cybersecurity.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-date">
-                                <p>2018 - Present</p>
-                            </div>
-                        </div>
-                        <div class="tab-content" data-index="2">
-                            <div class='tab-content-wrapper'>
-                                <div class="tab-body">
-                                    <div class="tab-logo">
-                                        <img src="Assets/nesl-logo.png" />
-                                    </div>
-                                    <div>
-                                        <div class="tab-title">
-                                            <p>NESL</p>
-                                            <p>Undergraduate Research Assistant</p>
-                                        </div>
-                                        <p style="padding-bottom: 2%">
-                                                Worked on a project evaluating different interpretable machine learning techniques.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-date">
-                                <p>April 2019 - Present</p>
-                            </div>
-                        </div>
-                        <div class="tab-content" data-index="3">
-                            <div class='tab-content-wrapper'>
-                                <div class="tab-body">
-                                    <div class="tab-logo">
-                                        <img src="Assets/starai_logo.png" />
-                                    </div>
-                                    <div>
-                                        <div class="tab-title">
-                                            <p>StarAI Lab</p>
-                                            <p>Undergraduate Research Assistant</p>
-                                        </div>
-                                        <p style="padding-bottom: 2%">
-                                            Working on optimizations on <i><u><a href="https://github.com/SHoltzen/dice">Dice</a></u></i>, a probabilistic programming language. The language itself is implemented in OCaml. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-date">
-                                <p>Jan 2020 - Present</p>
-                            </div>
-                        </div>
-                        <div class="tab-content" data-index="4">
-                            <div class='tab-content-wrapper'>
-                                <div class="tab-body">
-                                    <div>
-                                        <div class="tab-title">
-                                            <p>Technical Skills</p>
-                                        </div>
-                                        <div style="display: flex; justify-content: space-between">
-                                            <div class="skill-list">
-                                                <p style="padding-bottom: 2%">Programming Languages:</p>
-                                                <ul style="padding-left: 8%">
-                                                    <p>- C/C++</p>
-                                                    <p>- Python</p>
-                                                    <p>- OCaml</p>
-                                                    <p>- Javascript</p>
-                                                    <p>- HTML + CSS</p>
-                                                </ul>
-                                            </div>
-                                            <div class="skill-list">
-                                                <p style="padding-bottom: 2%">Frameworks/Tools:</p>
-                                                <ul style="padding-left: 8%">
-                                                    <p>- React.js</p>
-                                                    <p>- Node.js</p>
-                                                    <p>- MongoDB Atlas</p>
-                                                    <p>- Linux</p>
-                                                    <p>- Flask</p>
-                                                    <p>- Docker</p>
-                                                    <p>- Git</p>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="circle menu-item">
+                <a href="https://www.linkedin.com/in/yu-hsi-ellie-cheng/">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin"
+                        class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                        </path>
+                    </svg>
+                </a>
             </div>
-        </div>
-        <div id="footer">
-            <div class="line"></div>
-            <div class="footer-content">
-                <p>Designed & Made by Ellie Cheng</p>
-                <!-- <img src="Assets/logo_teal.png" /> -->
+
+            <div class="circle menu-item">
+                <a href="coming-soon/index.html">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-nib"
+                        class="svg-inline--fa fa-pen-nib fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M136.6 138.79a64.003 64.003 0 0 0-43.31 41.35L0 460l14.69 14.69L164.8 324.58c-2.99-6.26-4.8-13.18-4.8-20.58 0-26.51 21.49-48 48-48s48 21.49 48 48-21.49 48-48 48c-7.4 0-14.32-1.81-20.58-4.8L37.31 497.31 52 512l279.86-93.29a64.003 64.003 0 0 0 41.35-43.31L416 224 288 96l-151.4 42.79zm361.34-64.62l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.75 18.75-49.15 0-67.91z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="circle menu-item">
+                <a href="coming-soon/">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="desktop"
+                        class="svg-inline--fa fa-desktop fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512">
+                        <path fill="currentColor"
+                            d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="circle menu-item">
+                <a href="./YuHsi_Ellie_Cheng_Resume.pdf">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-alt"
+                        class="svg-inline--fa fa-file-alt fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <path fill="currentColor"
+                            d="M288 248v28c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-28c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm-12 72H108c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-28c0-6.6-5.4-12-12-12zm108-188.1V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h204.1C264.8 0 277 5.1 286 14.1L369.9 98c9 8.9 14.1 21.2 14.1 33.9zm-128-80V128h76.1L256 51.9zM336 464V176H232c-13.3 0-24-10.7-24-24V48H48v416h288z">
+                        </path>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
 </body>
-<script src="main.js"></script>
 
 </html>
