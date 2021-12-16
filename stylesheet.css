@@ -12,17 +12,20 @@ html {
 body {
     background: var(--light);
     font-family: 'Oswald', sans-serif;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     margin: 0;
     top:0;
     left:0;
+    padding: 10vh 0;
     position: relative;
     color: var(--dark);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 p {
@@ -71,9 +74,7 @@ img, svg {
     position: absolute;
     min-width: 300px;
     min-height: 300px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 2.5vh 0;
 }
 
 #center-border {
@@ -284,4 +285,19 @@ img, svg {
 #menu-wrapper:hover #menu .menu-item .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .menu-item .tooltip {
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    #menu, #menu .menu-item a svg,
+    #menu .menu-item .tooltip {
+        animation-play-state: paused;
+    }
+    
 }
