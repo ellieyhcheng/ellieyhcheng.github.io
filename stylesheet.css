@@ -95,7 +95,7 @@ img, svg {
 
 #name {
     background: var(--dark);
-    padding: 0.6rem 4rem;
+    padding: 0.6rem 2rem;
     font-size: 1.3rem;
     color: var(--light);
     letter-spacing: 0.2rem;
