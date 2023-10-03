@@ -155,6 +155,10 @@ pre {
   letter-spacing: 0.1rem;
 }
 
+#content p {
+  letter-spacing: 0.1rem;
+}
+
 @media only screen and (max-width: 1023px) {
   
   /* #menu {
