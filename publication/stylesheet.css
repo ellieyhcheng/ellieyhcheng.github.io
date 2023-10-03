@@ -145,7 +145,6 @@ pre {
 
 .item a {
     color: var(--primary);
-    transition: all 5s;
 }
 
 .item a:hover {
