@@ -8,7 +8,7 @@ url: "https://elliecheng.com"
 twitter_username: ellieyhc
 github_username:  ellieyhcheng
 
-permalink: /blog/:year/:month/:day/:title.html
+permalink: /blog/:year/:month/:day/:title/
 
 # Build settings
 theme: minima

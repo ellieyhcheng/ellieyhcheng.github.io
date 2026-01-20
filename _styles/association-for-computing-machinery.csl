@@ -125,7 +125,7 @@
       <key variable="issued"/>
     </sort>
     <layout>
-      <text variable="citation-number" prefix="[" suffix="] "/>
+      <!-- <text variable="citation-number" prefix="[" suffix="] "/> -->
       <group delimiter=". " suffix=". ">
         <text macro="author"/>
         <!-- <text macro="year"/> -->

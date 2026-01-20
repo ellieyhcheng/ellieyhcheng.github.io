@@ -84,13 +84,17 @@
 }
 
 .language-python pre {
-    background: var(--dark);
+    // background: var(--dark);
     color: var(--primary);
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+}
+
+.language-plaintext {
+    color:var(--secondary);
 }
 
 .container .article img {
@@ -113,26 +117,23 @@
     color: var(--medium)
 }
 
-.references ol {
-    counter-reset: list;
-}
-
-.container .references li {
-    margin: 0.5em 0 0.5em 0;
-    list-style: none;
-    line-height: 1rem;
-    font-size: 0.9rem;
-}
-
 .container .references .bibliography {
     margin: 0 0 0 0.1em;
     // margin: 0;
     padding: 0;
+    counter-reset: list;
 }
 
-.references ol > li::before {
-    // content: "[" counter(list) "] ";
-    // content: " ";
+.container .references .bibliography li {
+    margin: 0.5em 0 0.5em 1.4em;
+    list-style: none;
+    line-height: 1rem;
+    font-size: 0.9rem;
+    text-indent: -1.4em;
+}
+
+.container .references .bibliography li::before {
+    content: "[" counter(list) "] ";
     counter-increment: list;
 }
 
