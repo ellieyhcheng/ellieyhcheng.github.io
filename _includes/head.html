@@ -1,0 +1,25 @@
+{% if page.title %}
+<title>{{page.title}} | {{site.title}}</title>
+{% else %}
+<title>{{site.title}}</title>
+{% endif %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8X6YMYWB9S"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8X6YMYWB9S');
+</script>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/assets/images/logo.svg" type="image/svg">
+
+{% if page.css %}
+<link rel="stylesheet" href="/assets/css/{{page.css}}" type="text/css">
+{% else %}
+<link rel="stylesheet" href="/assets/css/stylesheet.css" type="text/css">
+{% endif %}
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">

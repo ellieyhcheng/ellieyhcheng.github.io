@@ -1,0 +1,53 @@
+---
+title: Publications
+layout: default
+css: publications.css
+---
+
+<section>
+    <h1>Conference Publications</h1>
+    <ol class="item-container">
+        {% for item in site.data.publications.published %}
+            <li class="item">
+                <p>
+                    <a href="{{ item.link }}">
+                    {{ item.title }}</a>
+                    {{ item.authors | join: ", " }}.
+                    <i>{{ item.conference }}</i>, {{ item.year }}.
+                </p>
+                {% for other in item.others %}
+                    <p><a href="{{ other.link }}">{{other.name}}</a></p>
+                {% endfor %}
+                <details>
+                    <summary>BibTex</summary>
+                    <pre>{{ item.bibtex }}</pre>
+                </details>
+            </li>
+        {% endfor %}
+    </ol>
+</section>
+
+<!-- --------------------------------------------------------------------------------------- -->
+
+<section>
+    <h1>Non-Archival Publications</h1>
+    <ol class="item-container">
+        {% for item in site.data.publications.nonarchival %}
+            <li class="item">
+                <p>
+                    <a href="{{ item.link }}">
+                    {{ item.title }}</a>
+                    {{ item.authors | join: ", " }}.
+                    <i>{{ item.conference }}</i>, {{ item.year }}.
+                </p>
+                {% for other in item.others %}
+                    <p><a href="{{ other.link }}">{{other.name}}</a></p>
+                {% endfor %}
+                <details>
+                    <summary>BibTex</summary>
+                    <pre>{{ item.bibtex }}</pre>
+                </details>
+            </li>
+        {% endfor %}
+    </ol>
+</section>

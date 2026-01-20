@@ -1,0 +1,146 @@
+published:
+  - title: "Learning to Keep a Promise: Scaling Language Model Decoding Parallelism with Learned Asynchronous Decoding."
+    authors: 
+      - Tian Jin*
+      - "<b>Ellie Y. Cheng*</b>"
+      - Zack Ankner
+      - Nikunj Saunshi
+      - Blake M. Elias
+      - Amir Yazdanbakhsh
+      - Jonathan Ragan-Kelley
+      - Suvinay Subramanian
+      - Michael Carbin
+    conference: International Conference on Machine Learning (ICML)
+    year: 2025
+    link: "https://arxiv.org/abs/2502.11517"
+    bibtex: | 
+      @inproceedings{jin2025promise,
+          title     = {Learning to Keep a Promise: Scaling Language Model Decoding Parallelism with Learned Asynchronous Decoding},
+          author    = {Jin, Tian and Cheng, Ellie Y. and Ankner, Zack and Saunshi, Nikunj and Elias, Blake M. and Yazdanbakhsh, Amir and Ragan-Kelley, Jonathan and Subramanian, Suvinay and Carbin, Michael},
+          booktitle = {International Conference on Machine Learning},
+          year      = {2025},
+      }
+  - title: Inference Plans for Hybrid Probabilistic Inference.
+    authors: 
+      - <b>Ellie Y. Cheng</b>
+      - Eric Atkinson
+      - Guillaume Baudart
+      - Louis Mandel
+      - Michael Carbin
+    conference: Principles of Programming Languages (POPL)
+    year: 2025
+    link: "https://dl.acm.org/doi/10.1145/3704846"
+    others:
+      - name: arXiv
+        link: "https://arxiv.org/abs/2408.11283"
+    bibtex: |
+      @inproceedings{cheng2025inference,
+          title     = {Inference Plans for Hybrid Particle Filtering},
+          author    = {Cheng, Ellie Y. and Atkinson, Eric and Baudart, Guillaume and Mandel, Louis and Carbin, Michael},
+          booktitle = {Principles of Programming Languages},
+          year      = {2025},
+      }
+  - title: How Can I Explain This To You? An Empirical Study of Deep Neural Network Explanation Methods.
+    authors: 
+      - Jeya Vikranth Jeyakumar
+      - Joseph Noor
+      - <b>Yu-Hsi Cheng</b>
+      - Luis Garcia
+      - Mani Srivastava
+    conference: Advances in Neural Information Processing Systems (NeurIPS)
+    year: 2020
+    link: "https://proceedings.neurips.cc/paper/2020/file/2c29d89cc56cdb191c60db2f0bae796b-Paper.pdf"
+    bibtex: |
+      @inproceedings{JeyakumarNeurIPS20,
+          title     = {How can i explain this to you? an empirical study of deep neural network explanation methods},
+          author    = {Jeyakumar, Jeya Vikranth and Noor, Joseph and Cheng, Yu-Hsi and Garcia, Luis and Srivastava, Mani},
+          booktitle = {Advances in Neural Information Processing Systems},
+          year      = {2020},
+      }
+nonarchival:
+  - title: Sharing State Between Prompts and Programs.
+    authors: 
+      - <b>Ellie Y. Cheng</b>
+      - Logan Weber
+      - Tian Jin
+      - Michael Carbin
+    conference: arXiv
+    year: 2025
+    link: "https://arxiv.org/abs/2512.14805"
+    bibtex: |
+      @article{cheng2025sharing,
+          title     = {Sharing State Between Prompts and Programs},
+          author    = {Cheng, Ellie Y. and Weber, Logan and Jin, Tian and Carbin, Michael},
+          journal   = {arXiv preprint arXiv:2512.14805},
+          year      = {2025},
+      }
+  - title: Planned Diffusion.
+    authors: 
+      - Daniel Israel*
+      - Tian Jin*
+      - <b>Ellie Cheng</b>
+      - Guy Van den Broeck
+      - Aditya Grover
+      - Suvinay Subramanian
+      - Michael Carbin
+    conference: arXiv
+    year: 2025
+    link: "https://arxiv.org/abs/2510.18087"
+    bibtex: |
+      @article{israel2025planned,
+          title     = {Planned Diffusion},
+          author    = {Israel, Daniel and Jin, Tian and Cheng, Ellie and Broeck, Guy Van den and Grover, Aditya and Subramanian, Suvinay and Carbin, Michael},
+          journal   = {arXiv preprint arXiv:2510.18087},
+          year      = {2025},
+      }
+  - title: Expressing and Exploiting Parallelism in Language Model Decoding.
+    authors: 
+      - Tian Jin*
+      - <b>Ellie Y. Cheng</b>*
+      - Michael Carbin
+    conference: Workshop on Large Language Model (LLM) Agents, ICLR
+    year: 2024
+    link: "https://openreview.net/forum?id=SDvU8PXgxg"
+    bibtex: |
+      @inproceedings{jin2024expressing,
+          title     = {Expressing and Exploiting Parallelism in Language Model Decoding},
+          author    = {Jin, Tian and Cheng, Ellie Y and Carbin, Michael},
+          booktitle = {Workshop on Large Language Model (LLM) Agents}
+          year      = {2024},
+      }
+  - title: Verifying Performance Properties of Probabilistic Inference.
+    authors: 
+      - Eric Atkinson
+      - <b>Ellie Y. Cheng</b>
+      - Guillaume Baudart
+      - Louis Mandel
+      - Michael Carbin
+    conference: Workshop on Verification of Probabilistic Programs (VeriProP)
+    year: 2023
+    link: "https://arxiv.org/abs/2307.07355"
+    bibtex: |
+      @inproceedings{AtkinsonVeriProP23,
+          title     = {Verifying Performance Properties of Probabilistic Inference},
+          author    = {Atkinson, Eric and Cheng, Ellie Y. and Baudart, Guillaume and Mandel, Louis and Carbin, Michael},
+          booktitle = {Workshop on Verification of Probabilistic Programs},
+          year      = {2023},
+      }
+  - title: "flip-hoisting: Exploiting Repeated Parameters in Discrete Probabilistic Programs."
+    authors: 
+      - <b>Yu-Hsi Cheng</b>
+      - Todd Millstein
+      - Guy Van den Broeck
+      - Steven Holtzen
+    conference: International Conference on Probabilistic Programming (PROBPROG)
+    year: 2021
+    link: "/assets/pdf/publications/ChengPROBPROG21.pdf"
+    others:
+      - name: Extended Draft
+        link: "https://arxiv.org/abs/2110.10284"
+    bibtex: |
+      @inproceedings{ChengPROBPROG21,
+          title     = {flip-hoisting: Exploiting Repeated Parameters in Discrete Probabilistic Programs},
+          author    = {Cheng, Yu-Hsi and Millstein, Todd and Van den Broeck, Guy and Holtzen, Steven},
+          booktitle = {International Conference on Probabilistic Programming},
+          year      = {2021},
+      }

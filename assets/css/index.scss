@@ -1,68 +1,11 @@
-:root {
-    --dark: #2F3133;
-    --light: #ffffff;
-    --primary: #A3C29B;
-    --displacement: 330%;
-}
-
-html {
-    scroll-behavior: smooth;
-    width: 100%;
-    height: 100%;
-}
+---
+---
+@import "styles";
 
 body {
-    background: var(--light);
-    font-family: 'Oswald', sans-serif;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    top:0;
-    left:0;
-    position: relative;
-    color: var(--dark);
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     overflow-y: hidden;
     overflow-x: auto;
-}
-
-p {
-    margin: 0;
-}
-
-ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-}
-
-hr {
-    border-width: 0.1px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-
-}
-
-img, svg {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-::-moz-selection { /* Code for Firefox */
-    color: var(--light);
-    background: black;
-}
-
-::selection {
-    color: var(--light);
-    background: black;
 }
 
 .circle {
@@ -346,3 +289,4 @@ img, svg {
     }
     
 }
+

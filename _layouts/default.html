@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <div id="name"><a href="/">{{ site.name }}</a></div>
+            <div id="menu">
+                <div class="menu-item">
+                    <a href="/publications/">Publications</a>
+                </div>
+                <div class="menu-item">
+                    <a href="/blog/">Blog</a>
+                </div>
+                <div class="menu-item">
+                    <a href="/assets/pdf/Ellie_Y_Cheng.pdf">CV</a>
+                </div>
+                <div class="menu-item">
+                    <a href="https://github.com/ellieyhcheng/">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="container">
+            {{ content }}
+        </div>
+    </div>
+</body>
+
+</html>

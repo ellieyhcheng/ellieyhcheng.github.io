@@ -1,0 +1,22 @@
+---
+title: Blog
+layout: default
+css: blog.css
+---
+
+<section>
+    <h1>Blog</h1>
+    <ol class="item-container">
+        {% for post in site.posts %}
+            <li class="item">
+                <h2 class="title">
+                    <a href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <p class="date">{{ post.date | date_to_string: "ordinal", "US" }}</p>
+                <p class="description">{{ post.excerpt }}</p>
+            </li>
+        {% endfor %}
+    </ol>
+</section>
