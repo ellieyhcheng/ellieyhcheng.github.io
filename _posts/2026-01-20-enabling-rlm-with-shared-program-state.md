@@ -15,15 +15,7 @@ layout: post
 css: post.css
 ---
 
-Redefining prompts as programs has been the central theme of programming system design around LLMs in recent years{% cite beurer2023prompting --file enabling-rlm-with-shared-program-state %}{% cite feng2024coprompt --file enabling-rlm-with-shared-program-state %}{% cite khattab2024dspy --file enabling-rlm-with-shared-program-state %}{% cite liang2025prompts --file enabling-rlm-with-shared-program-state %}. Prompts (which we call *natural code*, in contrast to *formal code* like Python) are on the way to becoming a powerful high-level programming language, but they are lacking as a primary programming medium when it comes to building large software and systems. 
-
-One challenge to using natural code as first-class programming constructs is the corrosion of the high-level abstraction afforded by natural language and LLM reasoning that makes it so attractive. As the community build tools and techniques to solve robustness and predictability issues in natural code without expensive training — such as structured output — the programmer is increasingly expected to write additional formal code to use natural code. 
-
-New mechanisms are needed to restore high-level abstraction when using natural code.
-
-Specifically, we have recently written a paper on a new programming abstraction to automate the necessary work when integrating embedded natural code in a (formal) program: *Sharing State Between Prompts and Programs*{% cite cheng2025sharing --file enabling-rlm-with-shared-program-state %}. The programming abstraction, **shared program state**, enables natural code to directly read/write program variables, manipulate program data, and implement control flow in the program. Shared program state automates the work of integrating natural code in programs by allowing LLMs to modify the program state through a controlled interface. With the paper, we also released the **Nightjar** Python library. 
-
-Orthogonal to this line of work is the work on Recursive Language Models (RLMs){% cite zhang2025recursive --file enabling-rlm-with-shared-program-state %}, which is an inference strategy for more effective long-context reasoning. What is interesting is that RLMs leverages the LLM to automate context management. The symmetry to shared program state of using an LLM for automated state management means programs using shared program state can easily use RLMs.
+Two recent lines of work have revealed a common design pattern of using LLM for automated state management. Recursive Language Models (RLMs){% cite zhang2025recursive --file enabling-rlm-with-shared-program-state %} automates the work of managing long prompt contexts using by allowing LLMs to self-decompose context prompts. Our recent paper on **shared program state**{% cite cheng2025sharing --file enabling-rlm-with-shared-program-state %} automates the work of integrating natural code in programs by allowing LLMs to modify the program state through a controlled interface. The common pattern of using an LLM for automated state management means programs using shared program state can easily use RLMs.
 
 In this blog post, we show how to enable the RLM inference strategy in only a few lines of code in a program with shared program state.
 
@@ -34,6 +26,20 @@ First, let’s talk about what the RLM inference strategy is: RLMs leverages the
 In short, enabling RLMs consists of enabling:
 1. LLM-driven context management, and
 2. Recursive LLM calls.
+
+The key insight here is that enabling RLM means enabling a limited form of *shared program state*, particularly in which the LLM uses Python and recursive LLM calls as its interface language to the state.
+
+## What is Shared Program State?
+
+Shared program state is a programming abstraction that offloads the work of managing LLM call inputs and outputs within a host program. Using shared program state, the embedded natural code directly read/write program variables, manipulate program data, and implement control flow in the program. The LLM agent that executes the natural code is setup to issue *effects*, which are distinguished requests of services to the host program; *handlers*, implemented in the host system, dispatch these effects with respect to the host program state. 
+
+<div class="center">
+<img src="/assets/images/posts/enabling-rlm-with-shared-program-state/example_diagram.png" style="width:90%" />
+</div>
+
+For example, in the figure above, <span class="fig-label">(a)</span> a program with embedded natural code (`"Perform the <query>..."`) using shared program state first executes as normal in the host system. <span class="fig-label">(b)</span> Executing the statement `query = input("Q: ")` makes the variable assignment to the variable `query` with user input, which is the string `"Exit, please."`. When encountering natural code, <span class="fig-label">(c)</span> the host system hands execution control to the LLM. The LLM issues effects to the program state to execute the natural code. Here, <span class="fig-label">(d)</span> the LLM issues a `Lookup` request to read the `query` variable. The handler resolves these effects by interface with the host program state: <span class="fig-label">(e)</span> The handler reads `query` from the shared variable scopes, <span class="fig-label">(f)</span> which has the value `"Exit please."` <span class="fig-label">(g)</span> The handler resumes natural code execution with the retrieved value, and the LLM continues executing the natural code. <span class="fig-label">(h)</span> the LLM issues another request `Goto`, to update the evaluation context to the `break` program value (i.e. outside the `while`-loop). This is an abortive effect, meaning that the handler does not resume natural code execution. Instead, <span class="fig-label">(i)</span> the handler updates the program control state, thus implementing control flow.
+
+In the above example, the LLM agent uses a specialized DSL (domain specific language) as effects. This interface language is referred to as the *execution substrate*. Other execution substrate designs are also possible, such as using Python code. We defer additional details of enabling shared program state to our paper {% cite cheng2025sharing --file enabling-rlm-with-shared-program-state %}. With the paper, we also released the **Nightjar** Python library that enables shared program state for natural code in Python programs.
 
 ## Enabling RLM in Programs with Shared Program State
 
@@ -71,12 +77,10 @@ Nightjar enables shared program state: the embedded natural code has direct read
 As discussed earlier, enabling RLM requires 1) LLM-driven context management, and 2) recursive LLM calls. With shared program state, Nightjar automatically enables the first. Nightjar also supports configuration to do the second.
 
 <span class="para">LLM Context Management.</span>
-To enable shared program state, Nightjar uses an LLM agent to interface with the host program state. This is done using *effects* and *handlers*, the details of which we defer to the paper {% cite cheng2025sharing --file enabling-rlm-with-shared-program-state %}. The relevant takeaway here is that the LLM automatically performs state management, where the state is the host program state. 
-
-When using an RLM to perform LLM inference in a program, the context prompt is a part of the host program state. This means that Nightjar automatically enables LLM-driven context management.
+To enable shared program state, Nightjar uses an LLM agent to interface with the host program state through effects and handlers. In doing so, the LLM automatically performs state management, where the state is the host program state. When using an RLM to perform LLM inference in a program, the context prompt is a part of the host program state. This means that Nightjar automatically enables LLM-driven context management.
 
 <span class="para">Recursive LLM Calls.</span>
-Nightjar supports a number of *execution substrates*. An execution substrate is the method or interface by which the LLM accesses the program state. One of the supported execution substrate is using Python code. Additionally, programmers can configure whether the LLM agent can issue LLM calls in the Python code. Recursive LLM calls are enabled by setting the interpreter execution substrate as `PYTHON_LLM` (as opposed to `PYTHON` which does not enable recursive LLM calls). 
+Nightjar supports a number of execution substrates, the method or interface by which the LLM accesses the program state. One of the supported execution substrate is using Python code. Additionally, programmers can configure whether the LLM agent can issue LLM calls in the Python code. Recursive LLM calls are enabled by setting the execution substrate as `PYTHON_LLM` (as opposed to `PYTHON` which does not enable recursive LLM calls). 
 
 ```python
 import nightjarpy as nj
@@ -87,7 +91,7 @@ config = nj.configs.DEFAULT_CONFIG.with_interpreter_updates(
 )
 ```
 
-Setting `recursion_limit` to greater than 1 also enables nested natural blocks that uses shared program state.
+Setting `recursion_limit` to greater than 1 enables nested natural blocks that uses shared program state.
 
 Nightjar provides recommended preset configurations. Specifically, `INTERPRETER_PYTHON_LLM_JSON_CONFIG` is the preset configuration corresponding to RLMs.
 
@@ -112,7 +116,7 @@ We evaluated the above program to show that using RLMs through Nightjar achieves
 
 ### Methodology
 
-We evaluated the tasks with context window length of 131k, following the RLM paper{% cite zhang2025recursive --file enabling-rlm-with-shared-program-state %}. We also follow their experimental setup to use GPT-5 with medium reasoning effort as the root LLM and GPT-5-mini with medium reasoning as the sub-LLMs and to set recursion depth limit to 1.
+We evaluated the tasks with context window length of 131k, following the RLM paper{% cite zhang2025recursive --file enabling-rlm-with-shared-program-state %}. We also follow their experimental setup to use GPT-5 with medium reasoning effort as the root LLM and GPT-5-mini with medium reasoning as the sub-LLMs and to set recursion depth limit to 1. We ran the benchmarks for N=3 runs and report the mean and standard deviation of metrics across runs.
 
 We compare the performance of the following methods:
 
@@ -123,13 +127,13 @@ We compare the performance of the following methods:
 
 ### Results
 
-As shown below, Nightjar (RLM-Enabled) achieves a slightly higher score to RLM, demonstrating that using the RLM mode in Nightjar is a competitive alternative to using RLM via the official implementation. The Nightjar ablation without recursive LLM calls achieves better score than the base LLM, but performs slightly worse than RLM and Nightjar (RLM-Enabled). This demonstrates that the agent setup with shared program state already enables some accuracy improvements, and the recursive LLM calls further boosts accuracy.
+As shown below, Nightjar (RLM-Enabled) achieves a slightly higher score to RLM, demonstrating that using the RLM mode in Nightjar is a competitive alternative to using RLM via the official implementation. The Nightjar ablation without recursive LLM calls achieves comparable score to the base LLM, but performs worse than RLM and Nightjar (RLM-Enabled). This demonstrates that the agent setup does not significantly result in accuracy improvements, but the recursive LLM calls does boost accuracy.
 
 <div class='center'>
-<img src="/assets/images/posts/enabling-rlm-with-shared-program-state/oolong_score.png" style="width:60%"/>
+<img src="/assets/images/posts/enabling-rlm-with-shared-program-state/oolong_score.png" style="width:55%"/>
 </div>
 
-Below are plots comparing input tokens and execution time of using each method. The y-axis shows the score. 
+Below are plots comparing input tokens, output tokens, and execution time of using each method. The y-axis shows the score. 
 
 <div class='center'>
 <img src="/assets/images/posts/enabling-rlm-with-shared-program-state/oolong_inp_time.png" style="width:100%"/>
@@ -137,9 +141,9 @@ Below are plots comparing input tokens and execution time of using each method. 
 
 RLM uses the most input tokens, while Nightjar (RLM-enabled) uses the most output tokens. Notably, the base LLM uses more input tokens than Nightjar and Nightjar (RLM-enabled) but has the lowest score. This shows that LLM in Nightjar and Nightjar (RLM-enabled) can manage the context efficiently. 
 
-Nightjar (RLM-enabled) has similar execution time to the official RLM implementation. RLM, Nightjar, and Nightjar (RLM-enabled) are 11-14x slower than using the base LLM as they rely on an LLM agent.
+Nightjar (RLM-enabled) has similar execution time to the official RLM implementation. RLM, Nightjar, and Nightjar (RLM-enabled) are 6.9-7.7x slower than using the base LLM as they rely on an LLM agent.
 
-Using RLM-mode in Nightjar is a comparable to using the official RLM implementation on tasks like the above, where the context is represented as a long string of data. Nightjar also provides other benefits when writing programs because it enables shared program state.
+Using the RLM inference strategy in Nightjar is a comparable to using the official RLM implementation on tasks like the above, where the context is represented as a long string of data. Nightjar also provides other benefits when writing programs because it enables shared program state.
 
 ## State is More Than Text
 
