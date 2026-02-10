@@ -1,4 +1,39 @@
 published:
+  - title: Sharing State Between Prompts and Programs.
+    authors: 
+      - <b>Ellie Y. Cheng</b>
+      - Logan Weber
+      - Tian Jin
+      - Michael Carbin
+    conference: International Conference on Learning Representations (ICLR)
+    year: 2026
+    link: "https://arxiv.org/abs/2512.14805"
+    bibtex: |
+      @inproceedings{cheng2026sharing,
+          title     = {Sharing State Between Prompts and Programs},
+          author    = {Cheng, Ellie Y. and Weber, Logan and Jin, Tian and Carbin, Michael},
+          booktitle = {International Conference on Learning Representations},
+          year      = {2026},
+      }
+  - title: Planned Diffusion.
+    authors: 
+      - Daniel Israel*
+      - Tian Jin*
+      - <b>Ellie Cheng</b>
+      - Guy Van den Broeck
+      - Aditya Grover
+      - Suvinay Subramanian
+      - Michael Carbin
+    conference: International Conference on Learning Representations (ICLR)
+    year: 2026
+    link: "https://arxiv.org/abs/2510.18087"
+    bibtex: |
+      @inproceedings{israel2026planned,
+          title     = {Planned Diffusion},
+          author    = {Israel, Daniel and Jin, Tian and Cheng, Ellie and Broeck, Guy Van den and Grover, Aditya and Subramanian, Suvinay and Carbin, Michael},
+          journal   = {International Conference on Learning Representations},
+          year      = {2026},
+      }
   - title: "Learning to Keep a Promise: Scaling Language Model Decoding Parallelism with Learned Asynchronous Decoding."
     authors: 
       - Tian Jin*
@@ -58,41 +93,6 @@ published:
           year      = {2020},
       }
 nonarchival:
-  - title: Sharing State Between Prompts and Programs.
-    authors: 
-      - <b>Ellie Y. Cheng</b>
-      - Logan Weber
-      - Tian Jin
-      - Michael Carbin
-    conference: arXiv
-    year: 2025
-    link: "https://arxiv.org/abs/2512.14805"
-    bibtex: |
-      @article{cheng2025sharing,
-          title     = {Sharing State Between Prompts and Programs},
-          author    = {Cheng, Ellie Y. and Weber, Logan and Jin, Tian and Carbin, Michael},
-          journal   = {arXiv preprint arXiv:2512.14805},
-          year      = {2025},
-      }
-  - title: Planned Diffusion.
-    authors: 
-      - Daniel Israel*
-      - Tian Jin*
-      - <b>Ellie Cheng</b>
-      - Guy Van den Broeck
-      - Aditya Grover
-      - Suvinay Subramanian
-      - Michael Carbin
-    conference: arXiv
-    year: 2025
-    link: "https://arxiv.org/abs/2510.18087"
-    bibtex: |
-      @article{israel2025planned,
-          title     = {Planned Diffusion},
-          author    = {Israel, Daniel and Jin, Tian and Cheng, Ellie and Broeck, Guy Van den and Grover, Aditya and Subramanian, Suvinay and Carbin, Michael},
-          journal   = {arXiv preprint arXiv:2510.18087},
-          year      = {2025},
-      }
   - title: Expressing and Exploiting Parallelism in Language Model Decoding.
     authors: 
       - Tian Jin*
